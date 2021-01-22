@@ -79,6 +79,9 @@
 #ifndef XFS_SUPER_MAGIC
 #define XFS_SUPER_MAGIC 0x58465342
 #endif
+#ifndef ZFS_SUPER_MAGIC
+#define ZFS_SUPER_MAGIC 0x2FC12FC1
+#endif
 
 GQuark
 r_bundle_error_quark(void)
@@ -1106,6 +1109,7 @@ static gboolean check_bundle_access(int bundle_fd, GError **error)
 			case SQUASHFS_MAGIC:
 			case UDF_SUPER_MAGIC:
 			case XFS_SUPER_MAGIC:
+			case ZFS_SUPER_MAGIC:
 				break;
 			/* these are prepared by root */
 			case HOSTFS_SUPER_MAGIC:
